@@ -8,20 +8,30 @@
 </head>
 <body>
 
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+
 <div class="container">
 <div class="row">
   <div class="col-xs-6">
-    <h1><a href="#">WCCC Gaming</a></h1>
+    <h1><%= link_to "WCCC Gaming", root_path %></h1>
   </div>
   <div class="col-xs-6">
     <ul id="nav" class="nav pull-right nav-pills">
-      <li><a href="#">Home</a></li>
+      <li><%= link_to "Home", root_path %></li>
       <li><a href="#">About</a></li>
-      <li><a href="#">News</a></li>
+      <li><%= link_to "News", posts_path %></li>
       <li><a href="#">Events</a></li>
     </ul>
   </div>
 </div>
+  <%= render 'devise_errors' %>
   <%= yield %>
 </div>
 </body>

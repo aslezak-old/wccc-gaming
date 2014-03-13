@@ -1,5 +1,13 @@
 @import "bootstrap";
 
 #nav {
-  margin-top:15px;
+  margin-top:25px;
+}
+
+.newsTitle {
+  overflow:hidden;
+
+  span{
+    margin-top: 20px;
+  }
 }
