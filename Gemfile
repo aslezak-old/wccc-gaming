@@ -7,6 +7,8 @@ gem 'bootstrap-sass', '3.1.1.0'
 
 gem 'devise'
 
+gem 'RedCloth'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 

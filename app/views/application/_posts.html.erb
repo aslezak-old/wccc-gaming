@@ -7,7 +7,7 @@
      <span class="pull-right"><%= post.created_at.strftime("%d %b. %Y") %></span>
   </div>
   <div class="panel-body">
-    <p><%= simple_format post.text %></p>
+    <p><%= raw RedCloth.new(post.text).to_html %></p>
     <%= link_to 'Read More', post %>
   </div>
 </div>
