@@ -1,4 +1,4 @@
-<% @posts.each do |post| %>
+<% @pagi.each do |post| %>
  <div class="panel panel-default">
   <div class="newsTitle panel-heading">
     <h3 class="pull-left">
@@ -9,11 +9,14 @@
   <div class="panel-body">
     <p><%= raw RedCloth.new(post.text).to_html %></p>
     <%= link_to 'Read More', post %>
+    <% if user_signed_in? %>
+    <div class="pull-right">
+       <%= link_to 'Edit', edit_post_path(post) %>
+      <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?'} %>
+    </div>
+  <% end %>
   </div>
 </div>
-  <% if user_signed_in? %>
-    <%= link_to 'Edit', edit_post_path(post) %>
-    <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?'} %>
-  <% end %>
+
 
 <% end %>
