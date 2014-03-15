@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
   def index
     @pagi = Post.paginate(:page => params[:page], :per_page => 3, :order => 'created_at desc')
+    @events = Post.where('is_event = "t"')
   end
 
   def create

@@ -14,7 +14,13 @@
   <p><%= f.label :text %></p>
   <p><%= f.text_area :text %></p>
 
+  <p><%= f.label :is_event %></p>
+  <p><%= f.radio_button :is_event, true %></p>
+  <p><%= f.label :is_event, "True", :value => "true" %></p>
+  <p><%= f.radio_button :is_event, false %></p>
+  <p><%= f.label :is_event, "False", :value => "false" %></p>
   <%= f.submit %>
+
 
 
 <% end %>
