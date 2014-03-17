@@ -11,3 +11,22 @@
     margin-top: 20px;
   }
 }
+
+.event {
+  overflow:hidden;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  .eventdate {
+    margin-right: 15px;
+    text-align: center;
+    p {
+      margin: 0;
+      font-weight: bold;
+      font-size: 1.5em;
+      line-height: 1;
+    }
+  }
+  .eventtitle {
+    margin-top: 10px;
+  }
+}

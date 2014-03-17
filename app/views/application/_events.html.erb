@@ -1,4 +1,14 @@
-<h3>Events</h3>
+<h2>Upcoming Events</h2>
+<hr />
 <% @events.each do |event| %>
-  <%= event.title %>
+<div class="event">
+    <div class="eventdate pull-left">
+    <p><%= event.event_date.strftime("%d") %></p>
+    <p><%= event.event_date.strftime("%b") %></p>
+  </div>
+  <div class="eventtitle pull-left">
+    <p><%= link_to event.title, post_path(event) %></p>
+  </div>
+</div>
+
 <% end %>

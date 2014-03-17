@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def index
     @pagi = Post.paginate(:page => params[:page], :per_page => 3, :order => 'created_at desc')
-    @events = Post.where('is_event = "t"')
+    @events = Post.where('is_event = "t"').order('event_date desc').take(5)
   end
 
   def create
@@ -46,6 +46,6 @@ end
 
 private
   def post_params
-    params.require(:post).permit(:title, :text)
+    params.require(:post).permit(:title, :text, :is_event, :event_date)
   end
 end
