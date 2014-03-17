@@ -7,7 +7,8 @@
      <span class="pull-right"><%= post.created_at.strftime("%d %b. %Y") %></span>
   </div>
   <div class="panel-body">
-    <p><%= raw RedCloth.new(post.text).to_html %></p>
+    <!--<p><%= raw RedCloth.new(post.text).to_html %></p> -->
+    <p><%= markdown post.summary %></p>
     <%= link_to 'Read More', post %>
     <% if user_signed_in? %>
     <div class="pull-right">

@@ -28,5 +28,22 @@
   }
   .eventtitle {
     margin-top: 10px;
+    h3 {
+      margin: 0;
+    }
+  }
+}
+
+.logo {
+  a {
+      text-decoration: none;
+  }
+}
+
+.forminputs {
+  textarea {
+    width:100%;
+    height:200px;
+    padding:10px;
   }
 }
