@@ -7,20 +7,34 @@
       <% end %>
     </ul>
   <% end %>
+
   <div class="forminputs">
-    <p><%= f.label :title %></p>
-    <p><%= f.text_field :title %></p>
+    <div class="form-group">
+      <p><%= f.label :title %></p>
+      <p><%= f.text_field :title, :class => "form-control" %></p>
+    </div>
 
-    <p><%= f.label :text %></p>
-    <p><%= f.text_area :text %></p>
+    <div class="form-group">
+      <p><%= f.label :summary %></p>
+      <p><%= f.text_area :summary, :class => "form-control" %></p>
+    </div>
 
-    <p><%= f.label :summary %></p>
-    <p><%= f.text_area :summary %></p>
+    <div class="form-group">
+      <p><%= f.label :text %></p>
+      <p><%= f.text_area :text, :class => "form-control" %></p>
+    </div>
 
-    <p><%= f.check_box :is_event %></p>
+    <div class="checkbox">
+      <%= f.label :is_event, "Is this an event?" %>
+      <%= f.check_box :is_event %>
+    </div>
 
-    <p><%= f.date_select :event_date %></p>
-    <%= f.submit %>
+    <div class="form-group">
+      <p><%= f.label :event_date, "Event date:" %></p>
+      <p><%= f.date_select :event_date %></p>
+    </div>
+
+    <%= f.submit 'Submit', :class => "btn btn-primary" %>
   </div>
 
 

@@ -9,11 +9,11 @@
   <div class="panel-body">
     <!--<p><%= raw RedCloth.new(post.text).to_html %></p> -->
     <p><%= markdown post.summary %></p>
-    <%= link_to 'Read More', post %>
+    <%= link_to 'Read More', post, class: "btn btn-default" %>
     <% if user_signed_in? %>
     <div class="pull-right">
-       <%= link_to 'Edit', edit_post_path(post) %>
-      <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?'} %>
+       <%= link_to 'Edit', edit_post_path(post), class: "btn btn-default" %>
+      <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-default" %>
     </div>
   <% end %>
   </div>
