@@ -1,14 +1,15 @@
 <h2>Upcoming Events</h2>
 <hr />
 <% @events.each do |event| %>
-<div class="event">
-    <div class="eventdate pull-left">
-    <p><%= event.event_date.strftime("%d") %></p>
-    <p><%= event.event_date.strftime("%b") %></p>
+  <% if event.event_date >= Time.zone.now - 1.day%>
+  <div class="event">
+      <div class="eventdate pull-left">
+      <p><%= event.event_date.strftime("%d") %></p>
+      <p><%= event.event_date.strftime("%b") %></p>
+    </div>
+    <div class="eventtitle pull-left">
+      <h3><strong><%= link_to event.title, post_path(event) %></strong></h3>
+    </div>
   </div>
-  <div class="eventtitle pull-left">
-    <h3><strong><%= link_to event.title, post_path(event) %></strong></h3>
-  </div>
-</div>
-
+  <% end %>
 <% end %>

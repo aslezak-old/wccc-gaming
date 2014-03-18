@@ -10,7 +10,10 @@
 <div class="row">
   <div class="col-xs-8">
     <%= render 'posts' %>
-    <%= will_paginate @pagi %>
+    <div class="text-center">
+      <%= will_paginate @pagi, renderer: BootstrapPagination::Rails%>
+    </div>
+
   </div>
   <div class="col-xs-4">
       <%= render 'events' %>
