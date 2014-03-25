@@ -5,6 +5,8 @@ gem 'rails', '4.0.3'
 
 gem 'bootstrap-sass', '3.1.1.0'
 
+gem 'active_attr'
+
 gem 'devise'
 
 gem 'RedCloth'
