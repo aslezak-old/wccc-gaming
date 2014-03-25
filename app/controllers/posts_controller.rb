@@ -40,9 +40,17 @@ def destroy
   redirect_to posts_path
 end
 
-  def show
-    @post = Post.find(params[:id])
-  end
+def show
+  @post = Post.find(params[:id])
+end
+
+def news_list
+  @posts = Post.paginate(:page => params[:page], :per_page => 3, :order => 'created_at desc')
+end
+
+def event_list
+  @events = Post.where('is_event = "t"').reorder('event_date ASC').paginate(:page => params[:page], :per_page => 2, :order => 'created_at desc')
+end
 
 private
   def post_params

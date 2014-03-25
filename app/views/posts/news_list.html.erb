@@ -1,5 +1,6 @@
-<% @pagi.each do |post| %>
- <div class="panel panel-default">
+<h2 class="text-center">News</h2>
+<% @posts.each do |post| %>
+<div class="panel panel-default">
   <div class="newsTitle panel-heading">
     <h3 class="pull-left">
       <strong><%= post.title %></strong>
@@ -7,6 +8,7 @@
      <span class="pull-right"><%= post.created_at.strftime("%d %b. %Y") %></span>
   </div>
   <div class="panel-body">
+    <!--<p><%= raw RedCloth.new(post.text).to_html %></p> -->
     <p><%= markdown post.summary %></p>
     <%= link_to 'Read More', post, class: "btn btn-default" %>
     <% if user_signed_in? %>
@@ -17,6 +19,6 @@
   <% end %>
   </div>
 </div>
-
-
 <% end %>
+
+<%= will_paginate @posts, renderer: BootstrapPagination::Rails%>
