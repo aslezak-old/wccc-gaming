@@ -6,7 +6,7 @@
     <h3 class="pull-left">
       <strong><%= post.title %></strong>
     </h3>
-     <span class="pull-right"><%= post.created_at.strftime("%d %b. %Y") %></span>
+     <span class="pull-right"><strong>Event Date:</strong> <%= post.event_date.strftime("%d %b. %Y") %></span>
   </div>
   <div class="panel-body">
     <!--<p><%= raw RedCloth.new(post.text).to_html %></p> -->
