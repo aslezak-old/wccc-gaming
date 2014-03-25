@@ -1,1 +1,25 @@
 <h1>Contact Us</h1>
+<%= form_for @message do |f| %>
+  <% if @message.errors.any? %>
+    <div>
+        <% @message.errors.full_messages.each do |msg| %>
+          <div class="alert alert-danger">
+            <p><%= msg %></li>
+          </div>
+        <% end %>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control"%>
+  </div>
+  <div class="form_group">
+    <%= f.label :email %>
+    <%= f.text_field :email, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_area :content, class: "form-control"%>
+  </div>
+  <%= f.submit 'Submit', class: "btn btn-default" %>
+<% end %>
