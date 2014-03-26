@@ -1,0 +1,12 @@
+<h2 class="text-center"><strong><%= @about_page.title %></strong></h2>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <p><%= markdown @about_page.content %></p>
+    <% if user_signed_in? %>
+    <div class="pull-right">
+       <%= link_to 'Edit', edit_page_path(@about_page), class: "btn btn-default" %>
+    </div>
+  <% end %>
+  </div>
+</div>
+

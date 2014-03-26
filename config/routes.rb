@@ -1,9 +1,11 @@
 WcccGaming::Application.routes.draw do
   devise_for :users
   resources :posts
+  resources :pages, :only => [:edit, :update]
   resources :messages, :only => [:new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  get '/about' => 'pages#index', as: 'about'
   get '/news' => 'posts#news_list', as: 'news_list'
   get '/events' => 'posts#event_list', as: 'event_list'
   # You can have the root of your site routed with "root"
