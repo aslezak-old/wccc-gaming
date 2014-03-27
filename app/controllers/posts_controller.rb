@@ -8,7 +8,7 @@ end
 
 def index
   @pagi = Post.paginate(:page => params[:page], :per_page => 3, :order => 'created_at desc')
-  @events = Post.where('is_event = "t"').reorder('event_date ASC').take(5)
+  @events = Post.where("is_event = 'true'").reorder('event_date ASC').take(5)
 end
 
 def create
@@ -50,7 +50,7 @@ def news_list
 end
 
 def event_list
-  @events = Post.where('is_event = "t"').reorder('event_date desc').paginate(:page => params[:page], :per_page => 7)
+  @events = Post.where("is_event = 'true'").reorder('event_date desc').paginate(:page => params[:page], :per_page => 7)
 end
 
 rescue_from CanCan::AccessDenied do |exception|
