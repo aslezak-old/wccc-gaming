@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :destroy, :create, :update, :new]
+  load_and_authorize_resource :except => [:news_list, :event_list]
 
 def new
   @post = Post.new
@@ -50,6 +51,10 @@ end
 
 def event_list
   @events = Post.where('is_event = "t"').reorder('event_date desc').paginate(:page => params[:page], :per_page => 7)
+end
+
+rescue_from CanCan::AccessDenied do |exception|
+  redirect_to root_url, :alert => exception.message
 end
 
 private

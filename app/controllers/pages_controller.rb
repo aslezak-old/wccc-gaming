@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-
+  before_action :authenticate_user!, only: [:edit, :destroy, :create, :update, :new]
+  load_and_authorize_resource
   def index
     @about_page = Page.first
   end
@@ -19,6 +20,11 @@ class PagesController < ApplicationController
 
   def show
   end
+
+rescue_from CanCan::AccessDenied do |exception|
+  redirect_to root_url, :alert => exception.message
+end
+
 
 private
   def page_params

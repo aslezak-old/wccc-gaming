@@ -11,13 +11,14 @@
 <div class="container">
 <div class="row">
   <div class="col-xs-12">
-      <% if user_signed_in? %>
+      <% if user_signed_in?%>
     <nav class="navbar navbar-default" role="navigation">
-      <%= link_to "WCCC Gaming Admin", root_path, :class => 'navbar-brand' %>
+      <%= link_to "WCCC Gaming Account", root_path, :class => 'navbar-brand' %>
       <p class="navbar-text">Logged in as <strong><%= current_user.email %></strong>.</p>
       <ul class="nav navbar-nav">
-        <li><%= link_to "New Post", new_post_path, :class => 'navbar-link' %></li>
-        <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+      <% if admin? %>
+          <li><%= link_to "New Post", new_post_path, :class => 'navbar-link' %></li>
+      <% end %>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
       </ul>
     </nav>
