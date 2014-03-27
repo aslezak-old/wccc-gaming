@@ -9,5 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-secret = Rails.env.production? ? ENV['SECRET_TOKEN'] : "top_secret_token"
-WcccGaming::Application.config.secret_key_base = secret
+WcccGaming::Application.config.secret_key_base = ENV["DEVISE"]
