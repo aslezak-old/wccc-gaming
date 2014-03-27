@@ -50,6 +50,8 @@ gem 'rails_12factor', group: :production
 group :development do
   gem "mailcatcher"
 end
+
+ruby "2.1.1"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
