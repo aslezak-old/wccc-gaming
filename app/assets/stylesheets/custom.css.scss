@@ -1,14 +1,21 @@
 @import "bootstrap";
 
 #nav {
-  margin-top:25px;
+  margin-top:35px;
+  float:right;
+  list-style:none;
+  font-size:1.25em;
+}
+#nav li {
+  display:inline;
+  padding:10px;
 }
 
 .newsTitle {
   overflow:hidden;
 
   span{
-    margin-top: 20px;
+    margin-top: 35px;
   }
 }
 
@@ -45,5 +52,22 @@
     width:100%;
     height:200px;
     padding:10px;
+  }
+}
+
+@media (max-width: 730px) {
+  #nav {
+    margin-top:0;
+    float:none;
+    padding-left:0px;
+  }
+  #nav li {
+    float:none;
+    display:inline;
+    width:25%;
+  }
+  .head {
+    width: 100%;
+    text-align:center;
   }
 }
