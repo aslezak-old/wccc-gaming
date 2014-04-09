@@ -8,14 +8,14 @@
     </div>
 </div>
 <div class="row">
-  <div class="col-xs-8">
+  <div class="col-xs-8 posts">
     <%= render 'posts' %>
     <div class="text-center">
       <%= will_paginate @pagi, renderer: BootstrapPagination::Rails%>
     </div>
 
   </div>
-  <div class="col-xs-4">
+  <div class="col-xs-4 events">
       <%= render 'events' %>
   </div>
 </div>
