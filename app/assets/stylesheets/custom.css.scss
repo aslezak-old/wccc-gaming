@@ -1,23 +1,58 @@
 @import "bootstrap";
 
-#nav {
-  margin-top:35px;
-  float:right;
-  list-style:none;
-  font-size:1.25em;
+$heading-font: commandocommando, Helvetica, Arial, sans-serif;
+
+@font-face {
+  font-family: 'commandocommando';
+  src: url('commando-webfont.eot');
+  src: url('commando-webfont.eot?#iefix') format('embedded-opentype'),
+  url('commando-webfont.woff') format('woff'),
+  url('commando-webfont.ttf') format('truetype'),
+  url('commando-webfont.svg#commandocommando') format('svg');
+  font-weight: normal;
+  font-style: normal;
+ }
+
+
+/*jumbotron styles */
+
+.jumbotron {
+  background-image: image-url("gaming-bg.jpg");
+  background-repeat: no-repeat;
+  color:white;
 }
+
+.jumbotron h1 {
+  font-family: $heading-font;
+  text-shadow: 2px 2px black;
+  padding: 10px;
+  width:auto;
+
+}
+
+.jumbotron p {
+  text-shadow: 2px 2px black;
+}
+
+.jumbotron a {
+  text-shadow: none;
+}
+/*nav styles */
+
 #nav li {
   display:inline;
   padding:10px;
 }
 
-.newsTitle {
-  overflow:hidden;
-
-  span{
-    margin-top: 35px;
-  }
+#nav {
+  margin-top:45px;
+  float:right;
+  list-style:none;
+  font-size:1.25em;
 }
+
+
+/*event styles */
 
 .event {
   overflow:hidden;
@@ -41,10 +76,31 @@
   }
 }
 
+
+.events h2 {
+  font-family: $heading-font;
+}
+
+.newsTitle {
+  overflow:hidden;
+  h3 {
+    font-family: $heading-font;
+  }
+  span{
+    margin-top: 20px;
+  }
+}
+
+.pagetitle {
+  font-family: $heading-font;
+}
+
 .logo {
   a {
-      text-decoration: none;
-  }
+  font-family: $heading-font;
+  text-decoration: none;
+  font-size:1.5em;
+ }
 }
 
 .forminputs {
