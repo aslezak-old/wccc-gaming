@@ -13,6 +13,9 @@ $heading-font: commandocommando, Helvetica, Arial, sans-serif;
   font-style: normal;
  }
 
+body {
+
+}
 
 /*jumbotron styles */
 
@@ -32,11 +35,16 @@ $heading-font: commandocommando, Helvetica, Arial, sans-serif;
 
 .jumbotron p {
   text-shadow: 2px 2px black;
+  padding: 10px;
+  //background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
 }
 
 .jumbotron a {
-  text-shadow: none;
+  color:white;
+  text-decoration: none;
 }
+
 /*nav styles */
 
 #nav li {
@@ -79,6 +87,7 @@ $heading-font: commandocommando, Helvetica, Arial, sans-serif;
 
 .events h2 {
   font-family: $heading-font;
+  text-align: center;
 }
 
 .newsTitle {
@@ -108,6 +117,12 @@ $heading-font: commandocommando, Helvetica, Arial, sans-serif;
     width:100%;
     height:200px;
     padding:10px;
+  }
+}
+
+@media (max-width: 992px){
+  .jumbotron {
+    background-image: image-url("gaming-bg-tablet.jpg");  
   }
 }
 
@@ -145,5 +160,12 @@ $heading-font: commandocommando, Helvetica, Arial, sans-serif;
   
   .event {
     display:inline-block;
+  }
+}
+
+
+@media (max-width: 450px){
+  .jumbotron {
+    background-image: image-url("gaming-bg-mobile.jpg");  
   }
 }

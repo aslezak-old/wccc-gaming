@@ -2,7 +2,7 @@
  <div class="panel panel-default">
   <div class="newsTitle panel-heading">
     <h3 class="pull-left">
-      <strong><%= post.title %></strong>
+      <strong><%= link_to post.title, post %></strong>
     </h3>
      <span class="pull-right"><%= post.created_at.strftime("%d %b. %Y") %></span>
   </div>
